@@ -1,0 +1,10 @@
+<h1><%= @meal.day %> <%= @meal.meal %></h1>
+
+<p>
+  Meal Name: <%= @meal.meal_name %><br>
+  Meal Description: <%= @meal.description %><br>
+  Number of Food Groups: <%= @meal.food_groups %>
+</p>
+
+<%= link_to "edit", edit_meal_path(params[:id]) %>
+<%= link_to "delete", meal_path(params[:id]), method: :delete %>
