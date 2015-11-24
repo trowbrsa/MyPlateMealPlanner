@@ -1,7 +1,7 @@
 class Meal < ActiveRecord::Base
   has_many :ingredients
 
-  DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+  DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   MEALS = ["Breakfast", "Lunch", "Dinner"]
 
   def self.food_groups(meal)

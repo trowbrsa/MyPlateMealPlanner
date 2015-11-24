@@ -1,14 +1,17 @@
 <fieldset>
   <%= form_for @meal, url:{action: @action } do |f| %>
   <legend><h1><%= @title %></h1>  </legend>
-    <%= f.label :day %>
+    <!-- <%= f.label :day %>
     <%= f.select(:day, Meal::DAYS, {include_blank: false}) %>
     <%= f.label :meal %>
-    <%= f.select(:meal, Meal::MEALS, {include_blank: false}) %>
+    <%= f.select(:meal, Meal::MEALS, {include_blank: false}) %> -->
     <%= f.label :meal_name %>
     <%= f.text_field :meal_name %>
     <%= f.label :description %>
     <%= f.text_area :description %>
+
+    <%= f.hidden_field :day, value: params[:day] %>
+    <%= f.hidden_field :meal, value: params[:meal] %>
     <%= f.submit %>
 
   <% end %>
