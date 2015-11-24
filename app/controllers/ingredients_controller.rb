@@ -10,6 +10,17 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
+    Ingredient.destroy(params[:id])
+    redirect_to meal_path(params[:meal_id])
+  end
+
+  def edit
+    @ingredient = Ingredient.find(params[:id])
+  end
+
+  def update
+    Ingredient.update(params[:id], ingredient_params[:ingredient])
+    redirect_to meal_path(params[:meal_id])
   end
 
 
