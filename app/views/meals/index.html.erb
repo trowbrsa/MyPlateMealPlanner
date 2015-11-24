@@ -18,13 +18,19 @@
         <%= meal %>
       </th>
         <% Meal::DAYS.each do |day| %>
-        <% day_meal = Meal.where("meal = ? AND day = ?", meal, day ) %>
+          <% day_meal = Meal.where("meal = ? AND day = ?", meal, day ) %>
+        </div>
         <td>
           <% if day_meal == [] %>
-            <%= link_to "Add Meal", "/meals/new/?day=#{day}&meal=#{meal}" %>
+            <% table_class = "add_" + meal.downcase %>
+            <div class="<%= table_class %>">
+              <%= link_to "Add #{meal}", "/meals/new/?day=#{day}&meal=#{meal}" %>
+            </div>
           <% else %>
             <% day_meal.each do |m| %>
+            <div class="<%= m.meal.downcase %>">
               <%= link_to m.meal_name , meal_path(m) %>
+            </div>
             <% end %>
           <% end %>
         </td>

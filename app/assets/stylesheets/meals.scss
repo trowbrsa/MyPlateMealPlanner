@@ -1,3 +1,122 @@
 // Place all the styles related to the meals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster|Cabin|');
+
+body {
+  font-family: Cabin, sans-serif;
+  width: 100%;
+  margin: auto;
+  color: #29293d;
+}
+
+table {
+  margin: auto;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: 'Lobster', cursive;
+  text-align: left;
+}
+
+form {
+  margin: auto;
+  padding: 0px 50px 0px 50px;
+  line-height: 200%;
+}
+
+fieldset {
+  padding-bottom: 20px;
+  border: 0;
+}
+
+label {
+  margin-left: 10px;
+}
+
+input, select {
+  border: none;
+  border-glow: none;
+  background-color: rgba(126, 144, 161, .4);
+  outline: none;
+  padding: 5px;
+  font-size: 1.05em;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 400px;
+  height: 120px;
+  border: none;
+  outline: none;
+  background-color: rgba(126, 144, 161, .4);
+  padding: 5px;
+  font-size: 1.05em;
+  border-radius: 5px;
+}
+
+div {
+  padding: 10px;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+}
+
+div > a {
+  text-decoration:none;
+  color: #1f1f2e;
+}
+
+div > a:hover {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.add_dinner {
+  border-color: #99b2ff;
+  background-color: #e5ecff;
+  border-style: dashed;
+}
+
+.dinner {
+  border-color: #99b2ff;
+  background-color: #99b2ff;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.add_breakfast {
+  border-color: #ffff33;
+  background-color: #ffffe5;
+  border-style: dashed;
+}
+
+.breakfast {
+  border-color: #ffff33;
+  background-color: #ffff33;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.add_lunch {
+  border-color: #ff6666;
+  background-color: #ffcccc;
+  border-style: dashed;
+}
+
+.lunch {
+  border-color: #ff6666;
+  background-color: #ff6666;
+  border-style: solid;
+  border-radius: 5px;
+}
