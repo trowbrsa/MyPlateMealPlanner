@@ -23,6 +23,15 @@ class IngredientsController < ApplicationController
     redirect_to meal_path(params[:meal_id])
   end
 
+  def add_or_remove_list
+    i = Ingredient.find(params[:id])
+    if i.shopping_list == true
+      Ingredient.update(i.id, shopping_list: false)
+    else
+      Ingredient.update(i.id, shopping_list: true)
+    end
+    redirect_to list_meals_path   
+  end
 
   private
 

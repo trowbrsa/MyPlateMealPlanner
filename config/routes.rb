@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   root 'meals#index'
-
+  patch 'ingredients/:id/update_list' => 'ingredients#add_or_remove_list', as: :update_list
   resources :meals do
     resources :ingredients
+      collection do
+        get 'shopping_list', as: :list
+      end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
