@@ -8,4 +8,23 @@
 
 <%= link_to "edit", edit_meal_path(params[:id]) %>
 <%= link_to "delete", meal_path(params[:id]), method: :delete %>
+
+<h3>Ingredients</h3>
+
+<ul>
+  <% @ingredients.each do |i| %>
+  <li>
+    <%= i.ingredient_name + " - " + i.food_group %>
+  </li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Add Ingredient", new_meal_ingredient_path(params[:id]) %>
+
+
+
+
+
+
 <%= link_to "home", meals_path %>
