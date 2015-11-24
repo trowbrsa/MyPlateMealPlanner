@@ -18,7 +18,6 @@ class MealsController < ApplicationController
   def show
     @meal = Meal.find(params[:id])
     @ingredients = @meal.ingredients
-    @ingredient = Ingredient.new
   end
 
   def edit

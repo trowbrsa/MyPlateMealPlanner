@@ -3,7 +3,12 @@
 <p>
   Meal Name: <%= @meal.meal_name %><br>
   Meal Description: <%= @meal.description %><br>
-  Number of Food Groups: <%= @meal.food_groups %>
+  Food Groups:
+  <% Meal.food_groups(@meal).each do |group| %>
+  <%= group %>
+  <% end %><br>
+  Number of Food Groups: <%= Meal.food_group_count(@meal) %>
+
 </p>
 
 <%= link_to "edit", edit_meal_path(params[:id]) %>
