@@ -1,13 +1,5 @@
 <h1>Welcome to MyPlate Meal Planner</h1>
 
-<br>
-
-<% @meals.each do |meal| %>
-<%= link_to meal.day + " " + meal.meal, meal_path(meal) %>
-<%= "-" + " " + meal.meal_name %>
-<br>
-<% end %>
-
 <table>
   <thead>
     <tr>
@@ -26,8 +18,15 @@
         <%= meal %>
       </th>
         <% Meal::DAYS.each do |day| %>
+        <% day_meal = Meal.where("meal = ? AND day = ?", meal, day ) %>
         <td>
-          <%= link_to "Add a Meal", "/meals/new/?day=#{day}&meal=#{meal}" %>
+          <% if day_meal == [] %>
+            <%= link_to "Add Meal", "/meals/new/?day=#{day}&meal=#{meal}" %>
+          <% else %>
+            <% day_meal.each do |m| %>
+              <%= link_to m.meal_name , meal_path(m) %>
+            <% end %>
+          <% end %>
         </td>
         <% end %>
       </tr>
