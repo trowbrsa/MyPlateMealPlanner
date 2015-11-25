@@ -1,7 +1,6 @@
 <div class="page_detail">
   <h1><%= @meal.day %> <%= @meal.meal %></h1>
 
-
     <h2> <%= @meal.meal_name %><br> </h2>
     <% if @meal.description != nil %>
       <p>
@@ -11,27 +10,14 @@
     Food Groups:
 
     <div class="plate">
-      <%= image_tag("fruits.jpg", :class => "top_left")%>
-      <%= image_tag("grains.jpg", :class => "top_right") %>
-      <%= image_tag("dairy.jpg", :class => "outside_top")  %>
-      <%= image_tag("vegetables.jpg", :class => "bottom_left") %>
-      <%= image_tag("protein.jpg", :class => "bottom_right") %>
+      <%= image_tag("fruits.jpg", :class => "top_left " + @meal.needed("Fruits") )%>
+      <%= image_tag("grains.jpg", :class => "top_right " + @meal.needed("Grains")) %>
+      <%= image_tag("dairy.jpg", :class => "outside_top " + @meal.needed("Dairy"))  %>
+      <%= image_tag("vegetables.jpg", :class => "bottom_left " + @meal.needed("Vegetables")) %>
+      <%= image_tag("protein.jpg", :class => "bottom_right " + @meal.needed("Protein")) %>
     </div>
-      <% food_groups = Ingredient::FOODGROUPS %>
-    <% Meal.food_groups(@meal).each do |group| %>
-      <% if group == "Fruits" %>
-        <%= image_tag("fruits.jpg") %>
-      <% elsif group == "Grains" %>
-        <%= image_tag("grains.jpg") %>
-      <% elsif group == "Dairy" %>
-          <%= image_tag("dairy.jpg") %>
-      <% elsif group == "Vegetables" %>
-          <%= image_tag("vegetables.jpg") %>
-      <% elsif group == "Protein" %>
-            <%= image_tag("protein.jpg") %>
-      <% end %>
-    <% end %><br>
-    Number of Food Groups: <%= Meal.food_group_count(@meal) %>
+
+    Number of Food Groups: <%= @meal.food_group_count %>
 
   </p>
 

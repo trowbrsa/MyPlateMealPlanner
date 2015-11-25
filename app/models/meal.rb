@@ -4,8 +4,8 @@ class Meal < ActiveRecord::Base
   DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   MEALS = ["Breakfast", "Lunch", "Dinner"]
 
-  def self.food_groups(meal)
-    food_group_array = meal.ingredients.map do |i|
+  def food_groups
+    food_group_array = self.ingredients.map do |i|
       i.food_group
     end
     food_group_array.uniq!
@@ -13,8 +13,14 @@ class Meal < ActiveRecord::Base
     return food_group_array
   end
 
-  def self.food_group_count(meal)
-    Meal.food_groups(meal).length
+
+  def needed(group)
+    have = self.food_groups.include?(group)
+    return have ? "selected" : "needed"
+  end
+
+  def food_group_count
+    self.food_groups.length
   end
 
 end
