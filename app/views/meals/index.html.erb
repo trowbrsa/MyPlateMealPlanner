@@ -1,6 +1,9 @@
 <h1>Welcome to MyPlate Meal Planner</h1>
 
-<%= image_tag("myplate.jpg") %>
+<div class="center">
+  <%= image_tag("myplate.jpg") %>
+</div>
+
 
 <table>
   <thead>
@@ -25,12 +28,12 @@
         <td>
           <% if day_meal == [] %>
             <% table_class = "add_" + meal.downcase %>
-            <div class="<%= table_class %>">
+            <div class="week <%= table_class %>">
               <%= link_to "Add #{meal}", "/meals/new/?day=#{day}&meal_type=#{meal}" %>
             </div>
           <% else %>
             <% day_meal.each do |m| %>
-            <div class="<%= m.meal.downcase %>">
+            <div class="week <%= m.meal.downcase %>">
               <%= link_to m.meal_name , meal_path(m) %>
             </div>
             <% end %>

@@ -1,37 +1,49 @@
-<h1><%= @meal.day %> <%= @meal.meal %></h1>
-
-<p>
-  Meal Name: <%= @meal.meal_name %><br>
-  Meal Description: <%= @meal.description %><br>
-  Food Groups:
-  <% Meal.food_groups(@meal).each do |group| %>
-  <%= group %>
-  <% end %><br>
-  Number of Food Groups: <%= Meal.food_group_count(@meal) %>
-
-</p>
-
-<%= link_to "edit", edit_meal_path(params[:id]) %>
-<%= link_to "delete", meal_path(params[:id]), method: :delete %>
-
-<h3>Ingredients</h3>
-
-<ul>
-  <% @ingredients.each do |i| %>
-  <li>
-    <%= i.ingredient_name + " - " + i.food_group %>
-    <%= link_to "edit", edit_meal_ingredient_path(params[:id], i.id) %>
-    <%= link_to "delete", meal_ingredient_path(params[:id], i.id), method: :delete, data: { confirm: "Are you sure?" } %>
-  </li>
-  <% end %>
-
-</ul>
-
-<%= link_to "Add Ingredient", new_meal_ingredient_path(params[:id]) %>
+<div class="page_detail">
+  <h1><%= @meal.day %> <%= @meal.meal %></h1>
 
 
+    <h2> <%= @meal.meal_name %><br> </h2>
+    <% if @meal.description != nil %>
+      <p>
+        <%= @meal.description %>
+      </p>
+    <% end %>
+    Food Groups:
+      <% food_groups = Ingredient::FOODGROUPS %>
+    <% Meal.food_groups(@meal).each do |group| %>
+      <% if group == "Fruits" %>
+        <%= image_tag("fruits.jpg") %>
+      <% elsif group == "Grains" %>
+        <%= image_tag("grains.jpg") %>
+      <% elsif group == "Dairy" %>
+          <%= image_tag("dairy.jpg") %>
+      <% elsif group == "Vegetables" %>
+          <%= image_tag("vegetables.jpg") %>
+      <% elsif group == "Protein" %>
+            <%= image_tag("protein.jpg") %>
+      <% end %>
+    <% end %><br>
+    Number of Food Groups: <%= Meal.food_group_count(@meal) %>
 
+  </p>
 
+  <%= link_to "edit", edit_meal_path(params[:id]) %>
+  <%= link_to "delete", meal_path(params[:id]), method: :delete %>
 
+  <h3>Ingredients</h3>
 
-<%= link_to "home", meals_path %>
+  <ul>
+    <% @ingredients.each do |i| %>
+    <li>
+      <%= i.ingredient_name + " - " + i.food_group %>
+      <%= link_to "edit", edit_meal_ingredient_path(params[:id], i.id) %>
+      <%= link_to "delete", meal_ingredient_path(params[:id], i.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+
+  </ul>
+
+  <%= link_to "Add Ingredient", new_meal_ingredient_path(params[:id]) %>
+  <%= link_to "home", meals_path %>
+
+</div>

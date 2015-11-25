@@ -1,1 +1,4 @@
-<%= render partial:'mealform', locals:{meal: @meal, action: :update, title: "Edit Meal", day: @meal.day, meal_type: @meal.meal} %>
+<div class="page_detail">
+  <%= render partial:'mealform',
+            locals:{meal: @meal, action: :update, title: "Edit Meal", day: @meal.day, meal_type: @meal.meal} %>
+</div>

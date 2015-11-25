@@ -7,8 +7,22 @@
 body {
   font-family: Cabin, sans-serif;
   width: 100%;
-  margin: auto;
   color: #4D4850;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+.page_detail {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  padding: 50px;
+
+}
+
+.center {
+  text-align: center;
 }
 
 table {
@@ -52,7 +66,10 @@ input, select {
   padding: 5px;
   font-size: 1.05em;
   border-radius: 5px;
-  width: 250px;
+}
+
+input {
+
 }
 
 textarea {
@@ -66,7 +83,7 @@ textarea {
   border-radius: 5px;
 }
 
-div {
+.week {
   padding: 10px;
   height: 80px;
   width: 80px;
@@ -75,7 +92,7 @@ div {
 
 }
 
-div > a {
+.week > a {
   position:absolute;
   top: 50%;
   left: 0;
@@ -85,7 +102,7 @@ div > a {
   color: #1f1f2e;
 }
 
-div > a:hover {
+.week > a:hover {
   font-weight: bold;
   font-size: 110%;
 }

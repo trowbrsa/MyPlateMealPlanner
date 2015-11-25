@@ -1,21 +1,27 @@
-<h1>Shopping List</h1>
+<div class="page_detail">
 
-<h3>Your shopping list:</h3>
-<ul>
-  <% @ingredients.each do |i| %>
-    <% if i.shopping_list == true %>
-      <li><%= i.ingredient_name %> <%= link_to "remove", update_list_path(i.id), method: :patch %></li>
-    <% end %>
-  <% end %>
-</ul>
+  <h1>Shopping List</h1>
 
-<h3>Ingredients you already have:</h3>
-<ul>
-  <% @ingredients.each do |i| %>
-    <% if i.shopping_list == false %>
-      <li><%= i.ingredient_name %> <%= link_to "add", update_list_path(i.id), method: :patch %></li>
+  <h3>Your shopping list:</h3>
+  <ul>
+    <% @ingredients.each do |i| %>
+      <% if i.shopping_list == true %>
+        <li><%= i.ingredient_name %> <%= link_to "remove", update_list_path(i.id), method: :patch %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+
+  <h3>Ingredients you already have:</h3>
+  <ul>
+    <% @ingredients.each do |i| %>
+      <% if i.shopping_list == false %>
+        <li><%= i.ingredient_name %> <%= link_to "add", update_list_path(i.id), method: :patch %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+
 
 <%= link_to "Home", root_path %>
+
+</div>
