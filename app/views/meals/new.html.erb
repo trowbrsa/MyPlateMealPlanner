@@ -1,1 +1,1 @@
-<%= render 'mealform' %>
+<%= render partial:'mealform', locals:{meal: @meal, action: :create, title: "Add a Meal", day: params[:day], meal_type: params[:meal_type]} %>

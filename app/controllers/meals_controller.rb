@@ -5,9 +5,7 @@ class MealsController < ApplicationController
   end
 
   def new
-    @title = "Add a Meal"
     @meal = Meal.new
-    @action = :create
   end
 
   def create
@@ -21,9 +19,7 @@ class MealsController < ApplicationController
   end
 
   def edit
-    @title = "Edit Meal"
     @meal = Meal.find(params[:id])
-    @action = :update
   end
 
   def update

@@ -47,19 +47,20 @@ label {
 input, select {
   border: none;
   border-glow: none;
-  background-color: rgba(126, 144, 161, .4);
+  background-color: #C9C7CB;
   outline: none;
   padding: 5px;
   font-size: 1.05em;
   border-radius: 5px;
+  width: 250px;
 }
 
 textarea {
-  width: 400px;
-  height: 120px;
+  width: 250px;
+  height: 50px;
   border: none;
   outline: none;
-  background-color: rgba(126, 144, 161, .4);
+  background-color: #C9C7CB;
   padding: 5px;
   font-size: 1.05em;
   border-radius: 5px;

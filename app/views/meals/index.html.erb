@@ -26,7 +26,7 @@
           <% if day_meal == [] %>
             <% table_class = "add_" + meal.downcase %>
             <div class="<%= table_class %>">
-              <%= link_to "Add #{meal}", "/meals/new/?day=#{day}&meal=#{meal}" %>
+              <%= link_to "Add #{meal}", "/meals/new/?day=#{day}&meal_type=#{meal}" %>
             </div>
           <% else %>
             <% day_meal.each do |m| %>
