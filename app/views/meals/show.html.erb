@@ -9,6 +9,14 @@
       </p>
     <% end %>
     Food Groups:
+
+    <div class="plate">
+      <%= image_tag("fruits.jpg", :class => "top_left")%>
+      <%= image_tag("grains.jpg", :class => "top_right") %>
+      <%= image_tag("dairy.jpg", :class => "outside_top")  %>
+      <%= image_tag("vegetables.jpg", :class => "bottom_left") %>
+      <%= image_tag("protein.jpg", :class => "bottom_right") %>
+    </div>
       <% food_groups = Ingredient::FOODGROUPS %>
     <% Meal.food_groups(@meal).each do |group| %>
       <% if group == "Fruits" %>

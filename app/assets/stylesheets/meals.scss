@@ -2,7 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css?family=Lobster|Cabin|');
+// @import url('https://fonts.googleapis.com/css?family=Lobster|Cabin|');
+
+$plate_width: 300px;
+
+div.plate {
+  position: relative;
+  height: $plate_width;
+  width: $plate_width*1.4;
+  img.top_left{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: $plate_width/2;
+  }
+
+  img.top_right{
+    position:absolute;
+    top: 0;
+    left: $plate_width/2;
+    width: $plate_width/2;
+  }
+  img.bottom_right{
+    position:absolute;
+    bottom: 0;
+    left: $plate_width/2;
+    width: $plate_width/2;
+  }
+  img.bottom_left{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: $plate_width/2;
+  }
+  img.outside_top {
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: $plate_width/3;
+
+  }
+}
 
 body {
   font-family: Cabin, sans-serif;
