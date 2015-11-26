@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyPlateMealPlanner</title>
+  <title>MyPlate Meal Planner</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <%= link_to "Meal Plan", meals_path %>
+    <%= link_to "Shopping List", list_meals_path %>
+  </nav>
 
 <%= yield %>
 
