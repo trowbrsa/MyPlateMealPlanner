@@ -1,1 +1,4 @@
-<%= render partial: 'ingredientform', locals:{ ingredient: @ingredient, action: :update, meal_id: params[:meal_id], title: "Edit Ingredient"}%>
+<div class="page_detail">
+  <%= render partial: 'ingredientform',
+  locals:{ ingredient: @ingredient, action: :update, meal_id: params[:meal_id], title: "Edit Ingredient"}%>
+</div>

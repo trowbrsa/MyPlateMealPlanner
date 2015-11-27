@@ -1,12 +1,12 @@
 <fieldset>
   <%= form_for ingredient, url:{ action: action} do |f| %>
-  <legend>  <%= title %> </legend>
+  <legend> <h1><%= title %> </h1></legend>
     <%= f.label :ingredient_name %>
-    <%= f.text_field :ingredient_name %>
+    <%= f.text_field :ingredient_name %><br>
     <%= f.label :food_group %>
-    <%= f.select(:food_group, Ingredient::FOODGROUPS, {include_blank: true}) %>
+    <%= f.select(:food_group, Ingredient::FOODGROUPS, {include_blank: true}) %><br>
     <%= f.label :shopping_list, :value => "Add to Shopping List" %>
-    <%= f.check_box :shopping_list %>
+    <%= f.check_box :shopping_list %><br>
     <%= f.hidden_field :meal_id, value: meal_id %>
     <%= f.submit %>
 

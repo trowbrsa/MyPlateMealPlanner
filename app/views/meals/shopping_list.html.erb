@@ -6,7 +6,7 @@
   <ul class="fa-ul">
     <% @ingredients.each do |i| %>
       <% if i.shopping_list == true %>
-        <li><%= link_to '<i class="fa fa-minus-square-o"></i>'.html_safe, update_list_path(i.id), method: :patch %>     <%= i.ingredient_name %> </li>
+        <li><%= link_to '<i class="fa fa-minus-square-o plus_minus_icon"></i>'.html_safe, update_list_path(i.id), method: :patch %>     <%= i.ingredient_name %> </li>
       <% end %>
     <% end %>
   </ul>
@@ -15,7 +15,7 @@
   <ul class="fa-ul">
     <% @ingredients.each do |i| %>
       <% if i.shopping_list == false %>
-        <li><%= link_to '<i class="fa fa-plus-square-o"></i>'.html_safe, update_list_path(i.id), method: :patch %>     <%= i.ingredient_name %></li>
+        <li><%= link_to '<i class="fa fa-plus-square-o plus_minus_icon"></i>'.html_safe, update_list_path(i.id), method: :patch %>     <%= i.ingredient_name %></li>
       <% end %>
     <% end %>
   </ul>
