@@ -13,6 +13,15 @@ class Meal < ActiveRecord::Base
     return food_group_array
   end
 
+  def needed_food_groups
+    needed_groups = ["Grains", "Protein", "Vegetables", "Fruits", "Dairy"]
+    have_groups = self.food_groups
+    have_groups.map do |group|
+      needed_groups.reject! {|g| g == group }
+    end
+    return needed_groups
+  end
+
 
   def needed(group)
     have = self.food_groups.include?(group)

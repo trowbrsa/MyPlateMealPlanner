@@ -2,12 +2,32 @@
   <h1><%= @meal.day %> <%= @meal.meal %></h1>
 
     <h2> <%= @meal.meal_name %><br> </h2>
-    <% if @meal.description != nil %>
       <p>
         <%= @meal.description %>
       </p>
-    <% end %>
-    Food Groups:
+
+      <% groups = @meal.food_group_count %>
+
+      <% if groups == 0 %>
+        <p>You don't have any food groups yet. Add ingredients to make a complete meal.</p>
+      <% elsif groups == 1 %>
+        <p>Your meal has only one food group. Add more ingredients to make a complete meal.</p>
+      <% elsif groups == 2 %>
+        <p>Your meal has only two food groups. Add more ingredients to make a complete meal.</p>
+      <% elsif groups == 3 || groups == 4 %>
+        <p>Nice job! Your meal has <%= groups %> food groups.</p>
+      <% elsif groups == 5 %>
+        <p>Wow! You have all five food groups in this meal.  </p>
+      <% end %>
+
+      <% if groups < 5 %>
+        <p>
+          Try adding <%= @meal.needed_food_groups.to_sentence(:last_word_connector => ' or ') %> to make a more complete meal.
+        </p>
+      <% end %>
+
+
+
 
     <div class="plate">
       <%= image_tag("fruits.jpg", :class => "top_left " + @meal.needed("Fruits") )%>
@@ -17,7 +37,7 @@
       <%= image_tag("protein.jpg", :class => "bottom_right " + @meal.needed("Protein")) %>
     </div>
 
-    Number of Food Groups: <%= @meal.food_group_count %>
+
 
   </p>
 
