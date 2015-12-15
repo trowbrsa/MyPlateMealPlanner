@@ -49,6 +49,7 @@ group :development do
   gem 'pry-rails'
   gem 'sqlite3'
   # Use SCSS for stylesheets
+  gem 'rails-erd'
 end
 
 group :production do
