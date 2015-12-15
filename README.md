@@ -8,8 +8,9 @@
 
 ### Installation
 - Clone the repository: `git clone git@github.com:emgord/MyPlateMealPlanner.git`
-- In the terminal navigate into the directory and run `bundle install` to install needed gems
-- Run `rake db:migrate` to create the database, and you will be all set to run on your local computer
+- In the terminal navigate into the directory and run `bundle install` to install project gems
+- Run `rake db:migrate` to create the database. Now you are all set to run the project on your local computer.
+
 ### Ruby version
 - 2.2.3
 
