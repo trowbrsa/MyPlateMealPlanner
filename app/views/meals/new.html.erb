@@ -1,4 +1,6 @@
 <div class="page_detail">
   <%= render partial:'mealform',
       locals:{meal: @meal, action: :create, title: "Add a Meal", day: params[:day], meal_type: params[:meal_type]} %>
+  <%= render partial:'/ingredients/ingredientform',
+      locals:{ :ingredient => Ingredient.new, action: :create, meal_id: params[:meal_id], title: "Add an Ingredient"}%>
 </div>
