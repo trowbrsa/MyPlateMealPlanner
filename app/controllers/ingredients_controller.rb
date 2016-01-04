@@ -1,12 +1,18 @@
 class IngredientsController < ApplicationController
 
+  def index
+    @meal = Meal.find(params[:meal_id])
+    @ingredients = @meal.ingredients
+    @ingredient = Ingredient.new
+  end
+
   def new
     @ingredient = Ingredient.new
   end
 
   def create
     Ingredient.create(ingredient_params[:ingredient])
-    redirect_to meal_path(params[:meal_id])
+    redirect_to meal_ingredients_path(params[:meal_id])
   end
 
   def destroy
@@ -30,7 +36,7 @@ class IngredientsController < ApplicationController
     else
       Ingredient.update(i.id, shopping_list: true)
     end
-    redirect_to list_meals_path   
+    redirect_to list_meals_path
   end
 
   private

@@ -34,7 +34,7 @@
           <% else %>
             <% day_meal.each do |m| %>
             <div class="week <%= m.meal.downcase %>">
-              <%= link_to m.meal_name , meal_path(m) %>
+              <%= link_to m.meal_name , meal_ingredients_path(m) %>
             </div>
             <% end %>
           <% end %>
